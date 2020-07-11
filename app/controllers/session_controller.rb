@@ -8,7 +8,7 @@ class SessionController < ApplicationController
         if
             authenticate(params[:username], params[:password])
             redirect '/home'
-        else AuthenticationError => e        
+        else AuthenticationError         
             @errors = ["Improper information entered"]
             erb :'sessions/login'
         end
