@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   post '/users' do    
       @user = User.create(name: params[:name], username: params[:username], password: params[:password])
       if @user.errors.any?
-          @errors = @user.errors.messages
+        #  @errors = @user.errors.messages
           erb :'sessions/signup'
       else
           session[:user_id] = @user.id
